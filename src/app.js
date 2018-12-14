@@ -18,10 +18,6 @@ store.subscribe(()=>{
     console.log(visibleExpenses)
 })
 
-store.dispatch(addExpense({description: 'Mobile bill', amount: 200, createdAt: 1200}))
-store.dispatch(addExpense({description: 'Coffee', amount: 10, createdAt: 200}))
-store.dispatch(addExpense({description: 'Rent', amount: 2110, createdAt: 400}))
-
 const jsx = (
     <Provider store={store}>
         <AppRouter />
