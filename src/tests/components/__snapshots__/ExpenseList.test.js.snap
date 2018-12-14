@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render expense list with expenses 1`] = `
+<div>
+  <h2>
+    Expense List
+  </h2>
+  <div
+    key="0"
+  >
+    <Component
+      amount={1922}
+      createdAt={0}
+      description="Gum"
+      id={1}
+      note=""
+    />
+  </div>
+  <div
+    key="1"
+  >
+    <Component
+      amount={12}
+      createdAt={-345600000}
+      description="Rent"
+      id={2}
+      note=""
+    />
+  </div>
+  <div
+    key="2"
+  >
+    <Component
+      amount={2001}
+      createdAt={345600000}
+      description="Credit cart"
+      id={3}
+      note=""
+    />
+  </div>
+</div>
+`;
+
+exports[`should render expense list with expenses 2`] = `
+<div>
+  <h2>
+    Expense List
+  </h2>
+  <p>
+    no expenses
+  </p>
+</div>
+`;
