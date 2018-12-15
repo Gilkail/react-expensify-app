@@ -5,7 +5,9 @@
   "author": "Gil Katchko",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "serve": "live-server public/",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
@@ -23,6 +25,7 @@
     "enzyme-to-json": "^3.3.5",
     "jest": "^23.6.0",
     "live-server": "^1.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "moment": "^2.22.2",
     "node-sass": "^4.9.4",
     "normalize.css": "^8.0.0",
