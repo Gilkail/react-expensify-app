@@ -12,9 +12,9 @@ exports[`Should match the expense list item 1`] = `
       </h3>
     </Link>
     <p>
-      12
-      , 
-      -345600000
+      $0.12
+      -
+      28 December 1969
     </p>
   </div>
 </div>
