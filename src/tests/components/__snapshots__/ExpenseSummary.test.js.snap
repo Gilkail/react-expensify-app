@@ -6,7 +6,7 @@ exports[`Should return viewing 1 expense 1`] = `
      Viewing 
     1
      
-    expenses
+    expense
      totalling 
     $19.22
   </h2>
