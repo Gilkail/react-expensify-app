@@ -1,16 +1,26 @@
 import uuid from 'uuid'
+import database from '../firebase/firebase'
 
 
-// Add expnes
-export const addExpense = ({description = '', note = '', amount = 0, createdAt = 0} = {}) => ({
-    type: 'ADD_EXPENSE',
-    expense: {
-        id: uuid(),
-        description,
-        note,
-        amount,
-        createdAt
+// Add expense function which will trigger the addExpense action called from AddExpansePage
+export const startAddExpense = (expenseData = {}) => { // Object transfered from 
+    return (dispatch) => { // Transfering action dispatch due to thunk configured in store config file
+        const {description = '', note = '', amount = 0, createdAt = 0} = expenseData // Destructuring object and setting up defaults
+        const expense = {description, note, amount, createdAt} // Passing variables to expense array
+        return database.ref('expenses').push(expense) // Pushing the data to firebase
+            .then((ref)=>{ // Getting promise from fetched data with the ref
+                dispatch(addExpense({ // Calling the addExpense dispatch
+                    id: ref.key, // Taking the generated key from the fetched data using ref.key
+                    ...expense // Spreading the expense object and passing to the action generator
+                }))
+        })
     }
+}
+
+// Add expnese
+export const addExpense = (expense) => ({
+    type: 'ADD_EXPENSE',
+    expense
 })
 
 // Remove expense
