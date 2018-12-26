@@ -6,11 +6,11 @@ module.exports = (env) => {
     const isProducation = env === 'production'
     const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' })
     
-    process.env.NODE_ENV = process.env.NODE_ENV || 'development' // Setting the enviroment values
+    process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-    if(process.env.NODE_ENV === 'test'){ // If enviroment is test set the dotenv path to .env.test
+    if(process.env.NODE_ENV === 'test'){
         require('dotenv').config({path: '.env.test'})
-    }else if (process.env.NODE_ENV === 'development'){ // If enviroment is development set the dotenv path to .env.development
+    }else if (process.env.NODE_ENV === 'development'){ 
         require('dotenv').config({path: '.env.development'})
     }
 
@@ -21,7 +21,7 @@ module.exports = (env) => {
             filename: 'bundle.js',
         },
         module: {
-            rules: [{ // 1st rule - Load babel for all JS files
+            rules: [{
                 loader: 'babel-loader',
                 test: /\.js$/,
                 exclude: /node_modules/
@@ -46,12 +46,12 @@ module.exports = (env) => {
         },
         plugins: [
             CSSExtract,
-            new webpack.DefinePlugin({ // Configuration of the server keys
-                'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY)
-                'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN)
-                'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL)
-                'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID)
-                'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET)
+            new webpack.DefinePlugin({
+                'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+                'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+                'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
+                'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+                'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
                 'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
             })
         ],
