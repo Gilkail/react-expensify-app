@@ -25,5 +25,5 @@ test('should check the editExpense submission', () => {
 test('should check the removeExpense submission', () => {
     wrapper.find('button').prop('onClick')(expenses[0].id)
     expect(historySpy.push).toHaveBeenLastCalledWith('/')
-    expect(removeExpenseSpy).toHaveBeenLastCalledWith(1)
+    expect(removeExpenseSpy).toHaveBeenLastCalledWith("1")
 })
