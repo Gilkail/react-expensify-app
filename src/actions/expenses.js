@@ -23,12 +23,21 @@ export const addExpense = (expense) => ({
     expense
 })
 
-// Remove expense
+// Remove expense action generator
 export const removeExpense = ({id} = {}) =>({
     type: 'REMOVE_EXPENSE',
     id
 })
 
+// Remove expense from firebase
+export const startRemoveExpense = (id) => {
+    return (dispatch) => {
+        const expenseRef = `expenses/${id}`
+        return database.ref(expenseRef).remove().then(()=>{
+            dispatch(removeExpense({id}))
+        })
+    }
+}
 
 // Edit expense
 export const editExpense = (id, updates) => ({
@@ -43,7 +52,7 @@ export const setExpenses = (expenses) => ({
     expenses
 })
 
-// export const startSetExpenses
+// set the starter function for fetching expenses from firebase
 
 export const startSetExpenses = () => {
     return (dispatch) => {
