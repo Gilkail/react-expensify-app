@@ -3,6 +3,7 @@ import moment from 'moment'
 import {shallow} from 'enzyme'
 import ExpenseForm from '../../components/ExpenseForm'
 import expenses from '../fixtures/expenses'
+import 'airbnb-js-shims'
 
 test('shold render expense form correctly', () => {
     const wrapper = shallow(<ExpenseForm />)
