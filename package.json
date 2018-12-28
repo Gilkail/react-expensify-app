@@ -13,6 +13,7 @@
     "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
+    "airbnb-js-shims": "^2.1.1",
     "babel-cli": "^6.26.0",
     "babel-core": "6.25.0",
     "babel-loader": "7.1.1",
@@ -20,6 +21,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "browser-polyfill": "^3.20.2",
     "core-js": "^2.6.1",
     "css-loader": "^1.0.1",
     "express": "^4.16.4",
