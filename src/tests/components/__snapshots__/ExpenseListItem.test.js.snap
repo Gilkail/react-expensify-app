@@ -1,21 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should match the expense list item 1`] = `
-<div>
+<Link
+  className="list-item"
+  replace={false}
+  to="/edit/2"
+>
   <div>
-    <Link
-      replace={false}
-      to="/edit/2"
+    <h3
+      className="list-item--title"
     >
-      <h3>
-        Rent
-      </h3>
-    </Link>
-    <p>
-      $0.12
-      -
+      Rent
+    </h3>
+    <span
+      className="list-item--subtitle"
+    >
       28 December 1969
-    </p>
+    </span>
   </div>
-</div>
+  <h3>
+    $0.12
+  </h3>
+</Link>
 `;

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 html{
     font-size: 62.5%;
 }
@@ -6,6 +10,8 @@ body{
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
     margin: 0px;
+    color: $dark-gray;
+    line-height: 1.6;
 }
 
 button{

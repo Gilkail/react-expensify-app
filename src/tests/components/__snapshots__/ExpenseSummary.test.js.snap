@@ -1,25 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should return viewing 1 expense 1`] = `
-<div>
-  <h2>
-     Viewing 
-     
-    expenses
-     totalling 
-    $200.00
-  </h2>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h2
+      className="page-header__title"
+    >
+       Viewing 
+      <span>
+         
+        expenses
+      </span>
+       totalling 
+      <span>
+        $200.00
+      </span>
+    </h2>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Should return viewing all expenses 1`] = `
-<div>
-  <h2>
-     Viewing 
-     
-    expenses
-     totalling 
-    $200.00
-  </h2>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h2
+      className="page-header__title"
+    >
+       Viewing 
+      <span>
+         
+        expenses
+      </span>
+       totalling 
+      <span>
+        $200.00
+      </span>
+    </h2>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
